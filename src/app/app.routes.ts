@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
+import Portfolio from './portfolio/portfolio';
 
 export const routes: Routes = [
   {
-    path: 'home',
-    loadComponent: () => import('./home/home'),
+    path: 'portfolio',
+    component: Portfolio,
   },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'portfolio',
     pathMatch: 'full',
   },
 ];
