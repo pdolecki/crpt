@@ -18,14 +18,6 @@ export const PORTFOLIO: Record<string, Position[]> = {
       price: { kas: 0, usd: 0 },
     },
   ],
-  KOBA: [
-    {
-      ticker: 'KOBA',
-      amount: 0,
-      operations: OPERATIONS['KOBA'],
-      price: { kas: 0, usd: 0 },
-    },
-  ],
   KASPY: [
     {
       ticker: 'KASPY',
@@ -90,35 +82,11 @@ export const PORTFOLIO: Record<string, Position[]> = {
       price: { kas: 0, usd: 0 },
     },
   ],
-  KOON: [
-    {
-      ticker: 'KOON',
-      amount: 0,
-      operations: OPERATIONS['KOON'],
-      price: { kas: 0, usd: 0 },
-    },
-  ],
   RAKUN: [
     {
       ticker: 'RAKUN',
       amount: 23000000,
       operations: OPERATIONS['RAKUN'],
-      price: { kas: 0, usd: 0 },
-    },
-  ],
-  KASMO: [
-    {
-      ticker: 'KASMO',
-      amount: 0,
-      operations: OPERATIONS['KASMO'],
-      price: { kas: 0, usd: 0 },
-    },
-  ],
-  KPAW: [
-    {
-      ticker: 'KPAW',
-      amount: 0,
-      operations: OPERATIONS['KPAW'],
       price: { kas: 0, usd: 0 },
     },
   ],
@@ -151,38 +119,6 @@ export const PORTFOLIO: Record<string, Position[]> = {
       ticker: 'KENNY',
       amount: 3000000,
       operations: OPERATIONS['KENNY'],
-      price: { kas: 0, usd: 0 },
-    },
-  ],
-  KDAO: [
-    {
-      ticker: 'KDAO',
-      amount: 0,
-      operations: OPERATIONS['KDAO'],
-      price: { kas: 0, usd: 0 },
-    },
-  ],
-  RUSTEE: [
-    {
-      ticker: 'RUSTEE',
-      amount: 0,
-      operations: OPERATIONS['RUSTEE'],
-      price: { kas: 0, usd: 0 },
-    },
-  ],
-  GHOAD: [
-    {
-      ticker: 'GHOAD',
-      amount: 0,
-      operations: OPERATIONS['GHOAD'],
-      price: { kas: 0, usd: 0 },
-    },
-  ],
-  NOCHA: [
-    {
-      ticker: 'NOCHA',
-      amount: 0,
-      operations: OPERATIONS['NOCHA'],
       price: { kas: 0, usd: 0 },
     },
   ],
