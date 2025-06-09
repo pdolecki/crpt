@@ -1,11 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { PortfolioStore } from '../../shared/data-access/portfolio-store';
 import { ExpandableList } from './ui/expandable-list';
+import { SomethingWentWrong } from '../../shared/components/something-went-wrong';
+import { Loading } from '../../shared/components/loading';
 
 @Component({
   selector: 'app-portfolio',
   template: `
     <div class="portfolio">
+      @if (portfolioStore.isError()) {
+      <app-something-went-wrong></app-something-went-wrong>
+      } @else if (portfolioStore.isLoading()) { 
+      <app-loading></app-loading>
+      } @else {
       <app-expandable-list
         [kasPrice]="portfolioStore.kasPrice()"
         [positions]="portfolioStore.positions()"
@@ -14,6 +21,7 @@ import { ExpandableList } from './ui/expandable-list';
         [kasBalance]="portfolioStore.balances.kas()"
         [usdBalance]="portfolioStore.balances.usd()"
       ></app-expandable-list>
+      }
     </div>
   `,
   styles: `
@@ -24,7 +32,7 @@ import { ExpandableList } from './ui/expandable-list';
       margin: 2rem 0 5rem;
     }
   `,
-  imports: [ExpandableList],
+  imports: [ExpandableList, SomethingWentWrong, Loading],
 })
 export default class Portfolio {
   protected readonly portfolioStore = inject(PortfolioStore);

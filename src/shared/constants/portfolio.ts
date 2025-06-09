@@ -5,6 +5,14 @@ export const KAS_INVESTED = 83500;
 export const KAS_MEAN_PRICE = 0.144;
 
 export const PORTFOLIO: Record<string, Position[]> = {
+  ZEAL: [
+    {
+      ticker: 'ZEAL',
+      amount: 100,
+      operations: OPERATIONS['ZEAL'],
+      price: { kas: 0, usd: 0 },
+    },
+  ],
   NACHO: [
     {
       ticker: 'NACHO',

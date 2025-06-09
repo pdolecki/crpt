@@ -1,6 +1,14 @@
-import { Operation } from "../interfaces/operation";
+import { Operation } from '../interfaces/operation';
 
 export const OPERATIONS: Record<string, Operation[]> = {
+  ZEAL: [
+    {
+      type: 'BUY',
+      date: '09.06.2025',
+      amount: 100,
+      price: 59,
+    },
+  ],
   NACHO: [
     {
       type: 'SELL',

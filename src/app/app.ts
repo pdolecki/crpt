@@ -4,11 +4,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  template: `
-    <router-outlet />
-  `,
+  template: ` <router-outlet /> `,
   styles: [],
 })
-export class App {
-  protected title = 'crpt';
-}
+export class App {}

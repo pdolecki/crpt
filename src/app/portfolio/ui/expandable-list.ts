@@ -43,21 +43,6 @@ import { ExpandableListSummary } from './expandable-list-summary';
           color: $color-gray-100;
         }
       }
-      .footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: $space-sm;
-        border-top: 2px solid $color-primary;
-        .kas, .dolars {
-          display: flex;
-          flex-direction: column;
-          font-size: $font-size-lg;
-        }
-        .dolars {
-          color: $color-gray-100
-        }
-      }
     }
   `,
   imports: [ExpandableListItem, ExpandableListSummary],
