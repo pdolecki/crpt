@@ -1,6 +1,9 @@
 import { Position } from '../interfaces/position';
 import { OPERATIONS } from './operations';
 
+export const KAS_INVESTED = 83500;
+export const KAS_MEAN_PRICE = 0.144;
+
 export const PORTFOLIO: Record<string, Position[]> = {
   NACHO: [
     {

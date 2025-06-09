@@ -9,10 +9,10 @@ import { ExpandableList } from './ui/expandable-list';
       <app-expandable-list
         [kasPrice]="portfolioStore.kasPrice()"
         [positions]="portfolioStore.positions()"
-        [kasTotal]="portfolioStore.kasTotal()"
-        [usdTotal]="portfolioStore.usdTotal()"
-        [kasBalance]="portfolioStore.kasBalance()"
-        [usdBalance]="portfolioStore.usdBalance()"
+        [kasTotal]="portfolioStore.totals.kas()"
+        [usdTotal]="portfolioStore.totals.usd()"
+        [kasBalance]="portfolioStore.balances.kas()"
+        [usdBalance]="portfolioStore.balances.usd()"
       ></app-expandable-list>
     </div>
   `,
