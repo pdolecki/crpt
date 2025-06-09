@@ -1,59 +1,36 @@
-# Crpt
+# 💸 Crpt – KAS Portfolio Tracker
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+Live Demo: https://pd-crpt.netlify.app/portfolio
 
-## Development server
+**Crpt** is a lightweight Angular 20 application for tracking investments in KAS and associated meme coins. It uses modern Angular features and applies best practices in architecture, SCSS styling, and performance.
 
-To start a local development server, run:
+## 🚀 Features
 
-```bash
-ng serve
-```
+- 📈 Live price fetching for KAS and custom tokens
+- 🧠 Clean reactive store using Angular 20 signals & `httpResource`
+- 🧮 Real-time portfolio calculations (total KAS, USD value, gains/losses)
+- 📦 Expandable list UI for token positions and operation history
+- 💅 Custom styling with modular SCSS and dark mode-ready palette
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Tech Stack
 
-## Code scaffolding
+- **Angular 20**
+- **SCSS (modular with variables)**
+- **RxJS Signals & Computed Store**
+- **httpResource** for declarative HTTP
+- **Type-safe architecture with interfaces**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🧪 Unit Testing
 
-```bash
-ng generate component component-name
-```
+Since Angular 20 new default testing is now being done using Jest/Web Runner. I've decided to go with Web Test Runner, since it uses the real web browser somewhat just like Karma did.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Run tests:
+> ng test
 
-```bash
-ng generate --help
-```
+## 🧑‍💻 Getting Started
 
-## Building
+Install dependencies:
+> npm install
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Run project:
+> npm start

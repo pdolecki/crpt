@@ -29,7 +29,7 @@ import { Loading } from '../../shared/components/loading';
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 2rem 0 5rem;
+      padding: 2rem 0 5rem;
     }
   `,
   imports: [ExpandableList, SomethingWentWrong, Loading],
