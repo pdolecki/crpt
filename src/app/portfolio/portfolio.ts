@@ -7,8 +7,6 @@ import { ExpandableList } from './ui/expandable-list';
   template: `
     <div class="portfolio">
       <app-expandable-list
-        [kasInvested]="portfolioStore.kasInvested()"
-        [kasMeanPrice]="portfolioStore.kasMeanPrice()"
         [kasPrice]="portfolioStore.kasPrice()"
         [positions]="portfolioStore.positions()"
         [kasTotal]="portfolioStore.kasTotal()"

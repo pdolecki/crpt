@@ -11,8 +11,6 @@ export class PortfolioStore {
   private readonly KAS_MEAN_PRICE = 0.144;
   private readonly PORTFOLIO = PORTFOLIO;
 
-  readonly kasInvested = signal<number>(this.KAS_INVESTED);
-  readonly kasMeanPrice = signal<number>(this.KAS_MEAN_PRICE);
   readonly kasPrice = computed<number>(
     () => this._kasPrice.value()?.price ?? 0
   );
@@ -38,10 +36,10 @@ export class PortfolioStore {
     this.positions().reduce((sum, pos) => sum + pos.amount * pos.price.usd, 0)
   );
   readonly kasBalance = computed<number>(
-    () => this.kasTotal() - this.kasInvested()
+    () => this.kasTotal() - this.KAS_INVESTED
   );
   readonly usdBalance = computed<number>(
-    () => this.kasInvested() * this.kasMeanPrice() - this.usdTotal()
+    () => this.KAS_INVESTED * this.KAS_MEAN_PRICE - this.usdTotal()
   );
 
   private readonly _kasPrice = httpResource<{ price: number }>(
