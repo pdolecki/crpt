@@ -4,6 +4,9 @@ Live Demo: https://pd-crpt.netlify.app/portfolio
 
 **Crpt** is a lightweight Angular 20 application for tracking investments in KAS and associated meme coins. It uses modern Angular features and applies best practices in architecture, SCSS styling, and performance.
 
+App generated with:
+> ng new crpt --defaults --style=scss --standalone --routing --inline-template --inline-style
+
 ## 🚀 Features
 
 - 📈 Live price fetching for KAS and custom tokens
@@ -14,7 +17,7 @@ Live Demo: https://pd-crpt.netlify.app/portfolio
 
 ## 🛠️ Tech Stack
 
-- **Angular 20**
+- **Angular 20 Zoneless**
 - **SCSS (modular with variables)**
 - **RxJS Signals & Computed Store**
 - **httpResource** for declarative HTTP
@@ -22,10 +25,7 @@ Live Demo: https://pd-crpt.netlify.app/portfolio
 
 ## 🧪 Unit Testing
 
-Since Angular 20 new default testing is now being done using Jest/Web Runner. I've decided to go with Web Test Runner, since it uses the real web browser somewhat just like Karma did.
-
-Run tests:
-> ng test
+Since Angular 20 new default testing is now being done using Jest/Web Runner and the current documentation is lacking information about zoneless testing I've decided to go without testing as of now. (I'm going to come back to this when there will be a clear, supported by Angular way for testing zoneless apps with Karma decomissioned)
 
 ## 🧑‍💻 Getting Started
 
