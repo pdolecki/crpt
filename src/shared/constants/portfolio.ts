@@ -8,7 +8,7 @@ export const PORTFOLIO: Record<string, Position[]> = {
   ZEAL: [
     {
       ticker: 'ZEAL',
-      amount: 100,
+      amount: 1350,
       operations: OPERATIONS['ZEAL'],
       price: { kas: 0, usd: 0 },
     },
@@ -56,7 +56,7 @@ export const PORTFOLIO: Record<string, Position[]> = {
   BURT: [
     {
       ticker: 'BURT',
-      amount: 416463,
+      amount: 350000,
       operations: OPERATIONS['BURT'],
       price: { kas: 0, usd: 0 },
     },

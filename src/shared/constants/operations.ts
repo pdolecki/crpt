@@ -4,6 +4,12 @@ export const OPERATIONS: Record<string, Operation[]> = {
   ZEAL: [
     {
       type: 'BUY',
+      date: '14.06.2025',
+      amount: 1250,
+      price: 2920,
+    },
+    {
+      type: 'BUY',
       date: '09.06.2025',
       amount: 100,
       price: 59,
@@ -163,6 +169,12 @@ export const OPERATIONS: Record<string, Operation[]> = {
   ],
   KASJAK: [],
   BURT: [
+    {
+      type: 'SELL',
+      date: '14.06.2025',
+      amount: 116463,
+      price: 2897.5,
+    },
     {
       type: 'SELL',
       date: '17.10.2024',
