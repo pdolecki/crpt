@@ -50,11 +50,10 @@ export class PortfolioStore {
   readonly isLoading = computed(
     () => this._kasPrice.isLoading() || this._positions.isLoading()
   );
-  
+
   readonly isError = computed(
     () => this._kasPrice.error() || this._positions.error()
   );
-
 
   private mergePositions(
     positions: Position[],

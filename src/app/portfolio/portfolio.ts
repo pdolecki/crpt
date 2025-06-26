@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { PortfolioStore } from '../../shared/data-access/portfolio-store';
 import { ExpandableList } from './ui/expandable-list';
-import { SomethingWentWrong } from '../../shared/components/something-went-wrong';
-import { Loading } from '../../shared/components/loading';
+import { SomethingWentWrong } from '../../shared/ui/something-went-wrong';
+import { Loading } from '../../shared/ui/loading';
 
 @Component({
   selector: 'app-portfolio',
