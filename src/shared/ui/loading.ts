@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-loading',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="loader">
       <span class="bar bar-1"></span>

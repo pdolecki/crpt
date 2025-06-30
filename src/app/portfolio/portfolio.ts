@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PortfolioStore } from '../../shared/data-access/portfolio-store';
 import { ExpandableList } from './ui/expandable-list';
 import { SomethingWentWrong } from '../../shared/ui/something-went-wrong';
@@ -6,11 +6,13 @@ import { Loading } from '../../shared/ui/loading';
 
 @Component({
   selector: 'app-portfolio',
+  imports: [ExpandableList, SomethingWentWrong, Loading],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="portfolio">
       @if (portfolioStore.isError()) {
       <app-something-went-wrong></app-something-went-wrong>
-      } @else if (portfolioStore.isLoading()) { 
+      } @else if (portfolioStore.isLoading()) {
       <app-loading></app-loading>
       } @else {
       <app-expandable-list
@@ -32,7 +34,6 @@ import { Loading } from '../../shared/ui/loading';
       padding: 2rem 0 5rem;
     }
   `,
-  imports: [ExpandableList, SomethingWentWrong, Loading],
 })
 export default class Portfolio {
   protected readonly portfolioStore = inject(PortfolioStore);

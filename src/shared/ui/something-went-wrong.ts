@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-something-went-wrong',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="error">
       <h3>ERROR</h3>

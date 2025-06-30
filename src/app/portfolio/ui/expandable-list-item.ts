@@ -1,10 +1,12 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Position } from '../../../shared/interfaces/position';
 import { DecimalFormat } from '../../../shared/pipes/decimal-format';
 import { NumberFormat } from '../../../shared/pipes/number-format';
 
 @Component({
   selector: 'app-expandable-list-item',
+  imports: [DecimalFormat, NumberFormat],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <details class="expandable">
       <summary class="summary">
@@ -80,7 +82,6 @@ import { NumberFormat } from '../../../shared/pipes/number-format';
       }
     }
   `,
-  imports: [DecimalFormat, NumberFormat],
 })
 export class ExpandableListItem {
   position = input.required<Position>();

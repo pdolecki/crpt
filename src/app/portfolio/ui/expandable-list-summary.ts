@@ -1,8 +1,10 @@
 import { DecimalPipe } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-expandable-list-summary',
+  imports: [DecimalPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="summary">
       <div class="kas">
@@ -33,7 +35,6 @@ import { Component, input } from '@angular/core';
         }
       }
   `,
-  imports: [DecimalPipe],
 })
 export class ExpandableListSummary {
   kasTotal = input.required<number>();

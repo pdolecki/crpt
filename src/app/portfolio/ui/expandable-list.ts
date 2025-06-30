@@ -1,10 +1,12 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Position } from '../../../shared/interfaces/position';
 import { ExpandableListItem } from './expandable-list-item';
 import { ExpandableListSummary } from './expandable-list-summary';
 
 @Component({
   selector: 'app-expandable-list',
+  imports: [ExpandableListItem, ExpandableListSummary],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="expandable-list">
       <h2 class="header">
@@ -45,7 +47,6 @@ import { ExpandableListSummary } from './expandable-list-summary';
       }
     }
   `,
-  imports: [ExpandableListItem, ExpandableListSummary],
 })
 export class ExpandableList {
   kasPrice = input.required<number>();
