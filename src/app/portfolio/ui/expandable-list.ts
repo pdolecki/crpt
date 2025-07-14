@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { Position } from '../../../shared/interfaces/position';
+import { Position } from '../interfaces/position';
 import { ExpandableListItem } from './expandable-list-item';
 import { ExpandableListSummary } from './expandable-list-summary';
 

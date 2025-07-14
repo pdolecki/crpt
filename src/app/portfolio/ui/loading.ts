@@ -11,7 +11,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     </div>
   `,
   styles: `
-    @use "../../styles/variables" as *;
+    @use "../../../styles/variables" as *;
     .loader{
       margin-top: calc(2 * $space-xl);
       display: flex;

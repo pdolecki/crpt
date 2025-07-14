@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { Position } from '../../../shared/interfaces/position';
-import { DecimalFormat } from '../../../shared/pipes/decimal-format';
-import { NumberFormat } from '../../../shared/pipes/number-format';
+import { Position } from '../interfaces/position';
+import { DecimalFormat } from '../pipes/decimal-format';
+import { NumberFormat } from '../pipes/number-format';
 
 @Component({
   selector: 'app-expandable-list-item',

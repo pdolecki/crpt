@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { PortfolioStore } from '../../shared/data-access/portfolio-store';
 import { ExpandableList } from './ui/expandable-list';
-import { SomethingWentWrong } from '../../shared/ui/something-went-wrong';
-import { Loading } from '../../shared/ui/loading';
+import { SomethingWentWrong } from './ui/something-went-wrong';
+import { Loading } from './ui/loading';
+import { PortfolioFacade } from './data-access/portfolio-facade';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,18 +10,18 @@ import { Loading } from '../../shared/ui/loading';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="portfolio">
-      @if (portfolioStore.isError()) {
+      @if (portfolioFacade.isError()) {
       <app-something-went-wrong></app-something-went-wrong>
-      } @else if (portfolioStore.isLoading()) {
+      } @else if (portfolioFacade.isLoading()) {
       <app-loading></app-loading>
       } @else {
       <app-expandable-list
-        [kasPrice]="portfolioStore.kasPrice()"
-        [positions]="portfolioStore.positions()"
-        [kasTotal]="portfolioStore.totals.kas()"
-        [usdTotal]="portfolioStore.totals.usd()"
-        [kasBalance]="portfolioStore.balances.kas()"
-        [usdBalance]="portfolioStore.balances.usd()"
+        [kasPrice]="portfolioFacade.kasPrice()"
+        [positions]="portfolioFacade.positions()"
+        [kasTotal]="portfolioFacade.totals.kas()"
+        [usdTotal]="portfolioFacade.totals.usd()"
+        [kasBalance]="portfolioFacade.balances.kas()"
+        [usdBalance]="portfolioFacade.balances.usd()"
       ></app-expandable-list>
       }
     </div>
@@ -36,5 +36,5 @@ import { Loading } from '../../shared/ui/loading';
   `,
 })
 export default class Portfolio {
-  protected readonly portfolioStore = inject(PortfolioStore);
+  protected readonly portfolioFacade = inject(PortfolioFacade);
 }
