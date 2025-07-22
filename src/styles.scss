@@ -1,0 +1,46 @@
+:root {
+  --color-primary: #3addbe;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-red: #f43f5e;
+  --color-green: #3ddc91;
+  // SPACINGS
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  // FONTS
+  --font-size-base: 16px;
+  --font-size-sm: 12px;
+  --font-size-lg: 20px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-black);
+  color: var(--color-primary);
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2px;
+  p {
+    letter-spacing: 1px;
+  }
+}

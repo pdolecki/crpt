@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import Portfolio from './portfolio/portfolio';
+import Portfolio from './holdings/portfolio';
 
 export const routes: Routes = [
   {

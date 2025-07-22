@@ -1,4 +1,4 @@
-import { Operation } from '../interfaces/operation';
+import { Operation } from "../interfaces/operation";
 
 export const OPERATIONS: Record<string, Operation[]> = {
   ZEAL: [
