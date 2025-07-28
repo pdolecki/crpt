@@ -2,12 +2,12 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Position } from '../interfaces/position';
 import { NumberFormat } from '../pipes/number-format';
 import { DecimalFormat } from '../pipes/decimal-format';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-portfolio-position',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NumberFormat, DecimalFormat, DecimalPipe],
+  imports: [NumberFormat, DecimalFormat, DecimalPipe, NgClass],
   template: `
     <details class="details">
       <summary class="summary">
@@ -40,48 +40,74 @@ import { DecimalPipe } from '@angular/common';
         </h3>
       </summary>
 
-      <!-- <div class="content">
-            <h4>Operations:</h4>
-            @for (operation of position().operations; track operation.date) {
-              <p>{{ operation.date }}</p>
-              <div class="operation">
-                <span>{{ operation.type }}</span>
-                <span> - </span>
-                <span>{{ operation.amount | numberFormat }}</span>
-                <span> - </span>
-                <span>{{ operation.price }} KAS</span>
-              </div>
-            }
-          </div> -->
+      <div class="content">
+        <h4>OPERATIONS:</h4>
+        @for (operation of position().operations; track operation.date) {
+          <p>{{ operation.date }}</p>
+          <div class="operation">
+            <span [ngClass]="operation.type === 'SELL' ? 'red' : 'green'">{{
+              operation.type
+            }}</span>
+            <span> - </span>
+            <span class="white">{{ operation.amount | numberFormat }}</span>
+            <span> - </span>
+            <span>{{ operation.price }} KAS</span>
+          </div>
+        }
+      </div>
     </details>
   `,
   styles: `
-    .summary {
-      border-top: 2px solid var(--color-primary);
-      padding: 5px 0;
-      display: grid;
-      grid-template-columns: 1.25fr 2fr 2fr;
-      grid-template-rows: repeat(2, auto);
-      .image {
-        grid-row: span 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img {
-          width: 40px;
-          height: 40px;
+    .details {
+      .summary {
+        cursor: pointer;
+        border-top: 2px solid var(--color-primary);
+        padding: 5px 0;
+        display: grid;
+        grid-template-columns: 1.25fr 2fr 2fr;
+        grid-template-rows: repeat(2, auto);
+        .image {
+          grid-row: span 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+        h3 {
+          margin: 0;
+          color: var(--color-white);
+          span {
+            color: var(--color-primary);
+            &.green {
+              color: var(--color-green);
+            }
+            &.red {
+              color: var(--color-red);
+            }
+          }
         }
       }
-      h3 {
-        margin: 0;
-        color: var(--color-white);
-        span {
-          color: var(--color-primary);
-          &.green {
+      .content {
+        padding: 0 25px 25px;
+        h4 {
+          margin: 20px 0 0;
+          color: var(--color-white);
+        }
+        p {
+          margin-bottom: 0;
+        }
+        .operation {
+          .red {
+            color: var(--color-red);
+          }
+          .green {
             color: var(--color-green);
           }
-          &.red {
-            color: var(--color-red);
+          .white {
+            color: var(--color-white);
           }
         }
       }
