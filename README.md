@@ -5,6 +5,7 @@ Live Demo: https://pd-crpt.netlify.app/portfolio
 **Crpt** is a lightweight Angular 20 application for tracking investments in KAS and associated meme coins. It uses modern Angular features and applies best practices in architecture, SCSS styling, and performance.
 
 App generated with:
+
 > ng new crpt --defaults --style=scss --standalone --routing --inline-template --inline-style
 
 ## 🚀 Features
@@ -25,12 +26,28 @@ App generated with:
 
 ## 🧪 Unit Testing
 
-Since Angular 20 new default testing is now being done using Jest/Web Runner and the current documentation is lacking information about zoneless testing I've decided to go without testing as of now. (I'm going to come back to this when there will be a clear, supported by Angular way for testing zoneless apps with Karma decomissioned)
+To run tests:
+
+> npm run test
+
+To generate code coverage:
+
+> npm run coverage
+
+I've decided to try out experimental unit testing system that is being mentioned since about Angular version 18 - Vitest. The angular CLI provides an experimental support for going with it as a test runner.
+Steps that needed to be taken care of:
+
+- change angular.json test config from the one defaulting to Karma
+- install vitest, vitest coverage and jsdom
+- uninstall karma and jasmine
+- update tsconfig.spec.json types from jasmine to vitest
 
 ## 🧑‍💻 Getting Started
 
 Install dependencies:
+
 > npm install
 
 Run project:
+
 > npm start
