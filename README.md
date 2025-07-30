@@ -1,53 +1,67 @@
-# 💸 Crpt – KAS Portfolio Tracker
+# 💸 Crpt – A Minimalist KAS Portfolio Tracker
 
-Live Demo: https://pd-crpt.netlify.app/portfolio
+[Live Demo →](https://pd-crpt.netlify.app/portfolio)
 
-**Crpt** is a lightweight Angular 20 application for tracking investments in KAS and associated meme coins. It uses modern Angular features and applies best practices in architecture, SCSS styling, and performance.
+I've developed it to track my portfolio of $KAS and meme coin positions with style, speed, and precision. **Crpt** is a performance-focused Angular 20+ app built entirely on modern Angular tools: **Signals, Zoneless, httpResource, and Vitest**. No boilerplate, no noise — just crypto.
 
-App generated with:
+<p align="center">
+  <img src="./public/demo-preview.png" alt="Crpt App Screenshot" style="max-width: 100%; height: auto;" />
+</p>
 
-> ng new crpt --defaults --style=scss --standalone --routing --inline-template --inline-style
+---
 
-## 🚀 Features
+## ✨ Features
 
-- 📈 Live price fetching for KAS and custom tokens
-- 🧠 Clean reactive store using Angular 20 signals & `httpResource`
-- 🧮 Real-time portfolio calculations (total KAS, USD value, gains/losses)
-- 📦 Expandable list UI for token positions and operation history
-- 💅 Custom styling with modular SCSS and dark mode-ready palette
+- 🔄 **Real-time price fetching** for KAS and custom tokens
+- 🧠 **Reactive state** with Angular Signals (no NgRx)
+- 🧮 **Portfolio calculation engine**: KAS, USD, profit/loss
+- 🧾 **Clean, expandable UI** for positions and operation history
+- 🌘 **Dark-mode-ready SCSS theme** using variables and modular structure
 
-## 🛠️ Tech Stack
+---
 
-- **Angular 20 Zoneless**
-- **SCSS (modular with variables)**
-- **RxJS Signals & Computed Store**
-- **httpResource** for declarative HTTP
-- **Type-safe architecture with interfaces**
+## ⚙️ Tech Stack
 
-## 🧪 Unit Testing
+| Category        | Technology                                  |
+| --------------- | ------------------------------------------- |
+| 🧠 Core         | Angular 20, Standalone Components, Zoneless |
+| 🧵 Styling      | SCSS (BEM-style, modular, theme-based)      |
+| ⚡ Reactivity   | Angular Signals, `httpResource`             |
+| 🧪 Testing      | Vitest (replaces Karma/Jasmine) + Coverage  |
+| 📐 Architecture | Typed interfaces, OnPush change detection   |
 
-To run tests:
+---
 
-> npm run test
+## 🧪 Unit Testing & Code Coverage
 
-To generate code coverage:
+I've ditched Karma + Jasmine and moved to a modern setup using Vitest with Angular 20’s experimental support.
 
-> npm run coverage
+### Run all tests
 
-I've decided to try out experimental unit testing system that is being mentioned since about Angular version 18 - Vitest. The angular CLI provides an experimental support for going with it as a test runner.
-Steps that needed to be taken care of:
+```bash
+npm run test
+```
 
-- change angular.json test config from the one defaulting to Karma
-- install vitest, vitest coverage and jsdom
-- uninstall karma and jasmine
-- update tsconfig.spec.json types from jasmine to vitest
+### Clean old reports, run coverage, and open result
 
-## 🧑‍💻 Getting Started
+```bash
+npm run test:cc
+```
 
-Install dependencies:
+---
 
-> npm install
+## 🚀 Getting Started
 
-Run project:
+### 1. Clone and install
 
-> npm start
+```bash
+git clone https://github.com/pdolecki/crpt.git
+cd crpt
+npm install
+```
+
+### 2. Run the app
+
+```bash
+npm start
+```

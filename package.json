@@ -6,8 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "vitest",
-    "test:cc": "vitest run --coverage"
+    "test": "ng test",
+    "test:cc:clear": "powershell -Command \"Remove-Item -Recurse -Force dist\\test-out",
+    "test:cc:open": "powershell -Command \"$path = Get-ChildItem -Directory dist\\test-out | Sort-Object LastWriteTime -Descending | Select-Object -First 1; Start-Process (Join-Path $path.FullName 'coverage\\index.html')\"",
+    "test:cc": "npm run test:cc:clear && ng test --no-watch --code-coverage && npm run test:cc:open "
   },
   "private": true,
   "dependencies": {
