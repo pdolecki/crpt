@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PortfolioStore } from './data-access/portfolio-store';
 import { DecimalPipe } from '@angular/common';
-import { Loading } from './ui/loading';
-import { PortfolioPosition } from './ui/portfolio-position';
+import { Loading } from './components/loading';
+import { PortfolioPosition } from './components/portfolio-position';
 
 @Component({
   selector: 'app-portfolio',
