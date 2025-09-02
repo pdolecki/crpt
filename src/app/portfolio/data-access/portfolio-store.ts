@@ -7,7 +7,7 @@ import {
   KAS_MEAN_PRICE,
   PORTFOLIO,
 } from '../constants/portfolio';
-import { combineLatest, filter, map, tap } from 'rxjs';
+import { combineLatest, map } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Injectable({
@@ -17,23 +17,23 @@ export class PortfolioStore {
   private readonly httpClient = inject(HttpClient);
 
   private readonly _kasPrice = httpResource<{ price: number }>(
-    () => `${environment.baseKasApi}/info/price`,
+    () => `${environment.baseKasApi}/info/price`
   );
   private readonly _positions = combineLatest(
     Object.keys(PORTFOLIO).map((ticker) =>
       this.httpClient
         .get<Position>(`${environment.krcKasApi}/${ticker}/info`)
-        .pipe(map((data) => ({ ...PORTFOLIO[ticker], ...data }))),
-    ),
+        .pipe(map((data) => ({ ...PORTFOLIO[ticker], ...data })))
+    )
   ).pipe(
     map((positions) =>
       positions
         .filter((p) => p.price.floorPrice !== 0)
         .sort(
           (a, b) =>
-            b.amount * b.price.floorPrice - a.amount * a.price.floorPrice,
-        ),
-    ),
+            b.amount * b.price.floorPrice - a.amount * a.price.floorPrice
+        )
+    )
   );
 
   readonly kasPrice = computed(() => this._kasPrice.value()?.price ?? 0);
@@ -49,14 +49,14 @@ export class PortfolioStore {
       kas: computed(() =>
         positions().reduce(
           (sum, pos) => sum + pos.amount * pos.price.floorPrice,
-          0,
-        ),
+          0
+        )
       ),
       usd: computed(() =>
         positions().reduce(
           (sum, pos) => sum + pos.amount * pos.price.priceInUsd,
-          0,
-        ),
+          0
+        )
       ),
     };
   }
