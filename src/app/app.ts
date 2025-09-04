@@ -1,12 +1,20 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+  viewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Notifications } from '../shared/data-access/notifications';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="page-wrapper">
+    <div class="page-wrapper" #notificationContainer>
       <router-outlet />
     </div>
   `,
@@ -21,4 +29,20 @@ import { RouterOutlet } from '@angular/router';
     }
   `,
 })
-export class App {}
+export class App implements OnInit {
+  notificationContainer = viewChild.required('notificationContainer', {
+    read: ViewContainerRef,
+  });
+
+  private readonly notifcations = inject(Notifications);
+
+  ngOnInit(): void {
+    this.notifcations.showNotification(
+      this.notificationContainer(),
+      'Information ',
+      'This application is simply my portfolio tracker, nothing fancy to see here 😄',
+      'info',
+      10000
+    );
+  }
+}
